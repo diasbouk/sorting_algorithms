@@ -22,9 +22,11 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+listint_t *insert_nodeint_at_index(listint_t **h, int idx, const int n);
+listint_t *add_nodeint(listint_t **head, const int n);
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
-
+listint_t *add_nodeint_end(listint_t **head, const int n);
 #endif

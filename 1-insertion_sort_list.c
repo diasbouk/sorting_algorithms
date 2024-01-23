@@ -6,7 +6,26 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	int temp;
+	listint_t *current = *list;
+	int tmp;
 
-	*list = (*list)->next;
+	if (list == NULL)
+		return;
+	current = *list;
+	while (current)
+	{
+		while (current)
+		{
+			if (current->next && current->n > current->next->n)
+			{
+				tmp = current->n;
+				*(int *)&current->n = current->next->n;
+				*(int *)&current->next->n = tmp;
+				current = *list;
+				print_list(*list);
+				break;
+			}
+			current = current->next;
+		}
+	}
 }
